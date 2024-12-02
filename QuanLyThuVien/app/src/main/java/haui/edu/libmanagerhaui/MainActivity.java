@@ -117,7 +117,10 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if(i == R.id.sub_AddUser){
                     setTitle("Add user");
-                    Toast.makeText(getApplicationContext(), "Thêm người dùng", Toast.LENGTH_SHORT).show();
+                    AddUserFragment user = new AddUserFragment();
+                    manager.beginTransaction()
+                            .replace(R.id.flContent,user)
+                            .commit();
                 }
                 if(i == R.id.sub_Pass){
                     setTitle("Change password");
